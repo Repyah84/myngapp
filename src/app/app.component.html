@@ -1,1 +1,35 @@
-<myngapp-nx-welcome></myngapp-nx-welcome> <router-outlet></router-outlet>
+<ngn-button-toggle value="trd" (toggleChange)="btnToggleValue = $event">
+  <ng-container *ngFor="let buttonToggle of buttonToggleList">
+    <ng-template
+      ngnToggle
+      [ngnToggleValue]="buttonToggle"
+      let-toggled="toggled"
+    >
+      <button [class.btn-toggle--toggled]="toggled" class="btn-toggle">
+        {{ buttonToggle }}
+      </button>
+    </ng-template>
+  </ng-container>
+</ngn-button-toggle>
+
+<div>
+  {{ btnToggleValue }}
+</div>
+
+<ngn-button-toggle-field [ngModel]="buttonToggleList[1]" #model="ngModel">
+  <ng-container *ngFor="let buttonToggle of buttonToggleList">
+    <ng-template
+      ngnToggle
+      [ngnToggleValue]="buttonToggle"
+      let-toggled="toggled"
+    >
+      <button [class.btn-toggle--toggled]="toggled" class="btn-toggle">
+        {{ buttonToggle }}
+      </button>
+    </ng-template>
+  </ng-container>
+</ngn-button-toggle-field>
+
+<div>
+  {{ model.value }}
+</div>

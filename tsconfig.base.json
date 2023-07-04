@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@myngapp/modules/utils": ["modules/utils/src/index.ts"],
       "@nikorg/my-button-toggle": ["modules/ui/button-toggle/src/index.ts"]
     }
   },

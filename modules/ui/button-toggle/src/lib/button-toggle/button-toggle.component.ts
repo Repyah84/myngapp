@@ -5,7 +5,6 @@ import {
   ContentChildren,
   EventEmitter,
   Input,
-  OnChanges,
   Output,
   QueryList,
 } from '@angular/core';
@@ -16,29 +15,28 @@ import { ToggleDirective } from '../directives/toggle.directive';
   selector: 'ngn-button-toggle',
   templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss'],
+  exportAs: 'ngpButtonToggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonToggleComponent<T> implements OnChanges, AfterContentInit {
-  public toggled?: number;
+export class ButtonToggleComponent<T> implements AfterContentInit {
+  private _value?: T;
 
   public toggleList$?: Observable<ToggleDirective<T>[]>;
 
   @Input()
-  public value?: T;
+  public set value(value: T | undefined) {
+    this._value = value;
+  }
+
+  public get value(): T | undefined {
+    return this._value;
+  }
 
   @Output()
-  public readonly toggleChange = new EventEmitter<T>();
+  public readonly buttonToggleValueChange = new EventEmitter<T>();
 
   @ContentChildren(ToggleDirective)
   public readonly toggleContentList?: QueryList<ToggleDirective<T>>;
-
-  public ngOnChanges(): void {
-    if (this.value === undefined) {
-      return;
-    }
-
-    this.toggleChange.emit(this.value);
-  }
 
   public ngAfterContentInit(): void {
     if (this.toggleContentList === undefined) {
@@ -53,15 +51,13 @@ export class ButtonToggleComponent<T> implements OnChanges, AfterContentInit {
     );
   }
 
-  protected onToggleClick(index: number, value?: T): void {
-    if (value === this.value) {
+  protected onToggleClick(value?: T): void {
+    if (value === this._value) {
       return;
     }
 
     this.value = value;
 
-    this.toggled = index;
-
-    this.toggleChange.emit(value);
+    this.buttonToggleValueChange.emit(value);
   }
 }

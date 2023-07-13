@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { counter } from '@myngapp/modules/utils';
 
 @Component({
   selector: 'myngapp-root',
@@ -12,13 +11,20 @@ export class AppComponent {
 
   public btnToggleValue: unknown;
 
-  public counter = counter();
+  public readonly toggleValueList = [
+    {
+      id: 1,
+      value: 'first',
+    },
+    {
+      id: 2,
+      value: 'second',
+    },
+    {
+      id: 3,
+      value: 'trd',
+    },
+  ];
 
   public readonly buttonToggleList = ['first', 'second', 'trd'];
-
-  public constructor() {
-    setInterval(() => {
-      console.log(this.counter());
-    }, 2000);
-  }
 }

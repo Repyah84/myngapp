@@ -1,35 +1,19 @@
-<ngn-button-toggle value="trd" (toggleChange)="btnToggleValue = $event">
-  <ng-container *ngFor="let buttonToggle of buttonToggleList">
-    <ng-template
-      ngnToggle
-      [ngnToggleValue]="buttonToggle"
-      let-toggled="toggled"
-    >
-      <button [class.btn-toggle--toggled]="toggled" class="btn-toggle">
-        {{ buttonToggle }}
+<ngn-button-toggle
+  [value]="toggleValueList[1]"
+  #buttonToggle="ngpButtonToggle"
+  (buttonToggleValueChange)="btnToggleValue = $event"
+>
+  <ng-container *ngFor="let toggle of toggleValueList">
+    <ng-template ngnToggle [ngnToggleValue]="toggle" let-isToggle="isToggle">
+      <button [class.btn-toggle--toggled]="isToggle" class="btn-toggle">
+        {{ toggle.value }}
       </button>
     </ng-template>
   </ng-container>
 </ngn-button-toggle>
 
-<div>
-  {{ btnToggleValue }}
-</div>
-
-<ngn-button-toggle-field [ngModel]="buttonToggleList[1]" #model="ngModel">
-  <ng-container *ngFor="let buttonToggle of buttonToggleList">
-    <ng-template
-      ngnToggle
-      [ngnToggleValue]="buttonToggle"
-      let-toggled="toggled"
-    >
-      <button [class.btn-toggle--toggled]="toggled" class="btn-toggle">
-        {{ buttonToggle }}
-      </button>
-    </ng-template>
-  </ng-container>
-</ngn-button-toggle-field>
+<div>{{ buttonToggle.value?.value }}</div>
 
 <div>
-  {{ model.value }}
+  <span>button toggle change: {{ (btnToggleValue | json) || 'no event' }}</span>
 </div>

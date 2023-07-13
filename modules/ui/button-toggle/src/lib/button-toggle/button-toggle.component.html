@@ -1,10 +1,10 @@
 <ng-container *ngIf="toggleList$ | async as toggleList">
-  <ng-container *ngFor="let toggle of toggleList; index as index">
-    <div (click)="onToggleClick(index, toggle.ngnToggleValue)">
+  <ng-container *ngFor="let toggle of toggleList">
+    <div (click)="onToggleClick(toggle.ngnToggleValue)">
       <ng-container
         [ngTemplateOutlet]="toggle.template"
         [ngTemplateOutletContext]="{
-          toggled: toggled === index || value === toggle.ngnToggleValue
+          isToggle: value === toggle.ngnToggleValue
         }"
       ></ng-container>
     </div>

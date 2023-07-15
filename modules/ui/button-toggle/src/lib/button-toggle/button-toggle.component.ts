@@ -15,7 +15,7 @@ import { ToggleDirective } from '../directives/toggle.directive';
   selector: 'ngn-button-toggle',
   templateUrl: './button-toggle.component.html',
   styleUrls: ['./button-toggle.component.scss'],
-  exportAs: 'ngpButtonToggle',
+  exportAs: 'ngnButtonToggle',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonToggleComponent<T> implements AfterContentInit {

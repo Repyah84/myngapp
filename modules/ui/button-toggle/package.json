@@ -1,9 +1,13 @@
 {
   "name": "@nikorg/my-button-toggle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Repyah84/myngapp/tree/master/modules/ui/button-toggle"
   },
   "dependencies": {
     "tslib": "^2.3.0"

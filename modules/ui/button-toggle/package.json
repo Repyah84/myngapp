@@ -1,5 +1,5 @@
 {
-  "name": "@nikorg/my-button-toggle",
+  "name": "@nikolay_ua_mk/my-button-toggle",
   "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^16.1.0",

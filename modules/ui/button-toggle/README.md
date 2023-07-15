@@ -1,10 +1,10 @@
 # modules-ui-button-toggle
 
-# 1 Instal npm
+## 1 Instal npm
 
     npm i @nikolay_ua_mk/my-button-toggle
 
-# 2 Import ButtonToggleModule in your environment
+## 2 Import ButtonToggleModule in your environment
 
 ```js
 import { NgModule } from '@angular/core';
@@ -28,7 +28,30 @@ import { FormsModule } from '@angular/forms';
 export class AppModule {}
 ```
 
-# 3 Use
+## 3 Use
+
+### TS
+
+```js
+  public btnToggleValue: unknown;
+
+  public readonly toggleValueList = [
+    {
+      id: 1,
+      value: 'first',
+    },
+    {
+      id: 2,
+      value: 'second',
+    },
+    {
+      id: 3,
+      value: 'trd',
+    },
+  ];
+```
+
+### HTML
 
 ```js
 <ngn-button-toggle
@@ -44,4 +67,10 @@ export class AppModule {}
     </ng-template>
   </ng-container>
 </ngn-button-toggle>
+
+<div>{{ buttonToggle.value?.value }}</div>
+
+<div>
+  <span>button toggle change: {{ (btnToggleValue | json) || 'no event' }}</span>
+</div>
 ```

@@ -2,7 +2,7 @@
 
 # 1 Instal npm
 
-    `npm i @nikolay_ua_mk/my-button-toggle`
+    npm i @nikolay_ua_mk/my-button-toggle
 
 # 2 Import ButtonToggleModule in your environment
 

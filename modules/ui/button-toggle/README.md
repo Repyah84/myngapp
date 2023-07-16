@@ -1,28 +1,22 @@
 # modules-ui-button-toggle
 
+    Supported angular 16+
+
 ## 1 Instal npm
 
-    npm i @nikolay_ua_mk/my-button-toggle
+    npm i @nikolay_ua_mk/button-toggle
 
 ## 2 Import ButtonToggleModule in your environment
 
-```js
+```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
-import { ButtonToggleModule } from '@nikorg/my-button-toggle';
-import { FormsModule } from '@angular/forms';
+import { ButtonToggleModule } from '@nikolay_ua_mk/button-toggle';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(appRoutes),
-    ButtonToggleModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, ButtonToggleModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
@@ -32,7 +26,7 @@ export class AppModule {}
 
 ### TS
 
-```js
+```ts
   public btnToggleValue: unknown;
 
   public readonly toggleValueList = [
@@ -53,7 +47,7 @@ export class AppModule {}
 
 ### HTML
 
-```js
+```html
 <ngn-button-toggle
   [value]="toggleValueList[1]"
   #buttonToggle="ngnButtonToggle"
@@ -73,4 +67,12 @@ export class AppModule {}
 <div>
   <span>button toggle change: {{ (btnToggleValue | json) || 'no event' }}</span>
 </div>
+```
+
+### css
+
+```css
+.btn-toggle--toggled {
+  background-color: aquamarine;
+}
 ```

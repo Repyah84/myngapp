@@ -16,7 +16,7 @@ import { ButtonToggleModule } from '@nikolay_ua_mk/button-toggle';
 
 @NgModule({
   ...
-  imports: [BrowserModule, ButtonToggleModule],
+  imports: [ButtonToggleModule],
 })
 export class AppModule {}
 ```

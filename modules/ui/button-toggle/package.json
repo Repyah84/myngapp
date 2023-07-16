@@ -1,6 +1,6 @@
 {
-  "name": "@nikolay_ua_mk/my-button-toggle",
-  "version": "0.0.2",
+  "name": "@nikolay_ua_mk/button-toggle",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0"

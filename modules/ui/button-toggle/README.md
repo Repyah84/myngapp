@@ -1,23 +1,22 @@
-# modules-ui-button-toggle
+# ngn-button-toggle
 
-    Supported angular 16+
+Supported angular 16+.
+
+This module is completely open to customize. Implement your template and style.
 
 ## 1 Instal npm
 
-    npm i @nikolay_ua_mk/button-toggle
+npm i @nikolay_ua_mk/button-toggle -D
 
-## 2 Import ButtonToggleModule in your environment
+## 2 Import ButtonToggleModule
 
 ```ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
+...
 import { ButtonToggleModule } from '@nikolay_ua_mk/button-toggle';
 
 @NgModule({
-  declarations: [AppComponent],
+  ...
   imports: [BrowserModule, ButtonToggleModule],
-  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
@@ -69,7 +68,7 @@ export class AppModule {}
 </div>
 ```
 
-### css
+### CSS
 
 ```css
 .btn-toggle--toggled {

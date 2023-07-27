@@ -17,3 +17,26 @@
 <div>
   <span>button toggle change: {{ (btnToggleValue | json) || 'no event' }}</span>
 </div>
+
+<br />
+
+<div>
+  <ngn-input-field>
+    <ng-template ngnInputLabel>
+      <span>Is input value</span>
+    </ng-template>
+
+    <input
+      required
+      ngnInput
+      [formControl]="control"
+      placeholder="input value"
+      type="text"
+    />
+  </ngn-input-field>
+</div>
+
+<br />
+<br />
+
+<button (click)="onSubmit()">Show Control</button>

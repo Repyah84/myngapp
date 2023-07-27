@@ -1,0 +1,20 @@
+<label [class.error]="errorState" class="field">
+  <div class="_a"></div>
+
+  <div class="_b">
+    <div class="__a"></div>
+    <div *ngIf="inputLabel" class="__b">
+      <div class="label">
+        <ng-container [ngTemplateOutlet]="inputLabel"></ng-container>
+      </div>
+    </div>
+    <div class="__c"></div>
+  </div>
+  <div class="_c"></div>
+
+  <div class="_d"></div>
+
+  <div class="_e">
+    <ng-content></ng-content>
+  </div>
+</label>

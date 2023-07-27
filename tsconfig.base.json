@@ -1,6 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -16,8 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@myngapp/utils": ["modules/utils/src/index.ts"],
-      "@nikolay_ui_mk/input-field": ["modules/ui/input-field/src/index.ts"],
-      "@nikolay_ua_mk/button-toggle": ["modules/ui/button-toggle/src/index.ts"]
+      "@nikolay_ua_mk/button-toggle": ["modules/ui/button-toggle/src/index.ts"],
+      "@nikolay_ui_mk/input-field": ["modules/ui/input-field/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

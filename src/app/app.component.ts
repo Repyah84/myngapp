@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'myngapp-root',
@@ -7,6 +8,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+  public readonly control = new FormControl('');
+
   title = 'myngapp';
 
   public btnToggleValue: unknown;
@@ -27,4 +30,8 @@ export class AppComponent {
   ];
 
   public readonly buttonToggleList = ['first', 'second', 'trd'];
+
+  public onSubmit(): void {
+    console.log(this.control);
+  }
 }

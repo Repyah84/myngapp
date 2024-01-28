@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { ButtonToggleModule } from '@nikolay_ua_mk/button-toggle';
 import { InputFieldModule } from '@nikolay_ui_mk/input-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     InputFieldModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    NgOptimizedImage,
   ],
   bootstrap: [AppComponent],
 })

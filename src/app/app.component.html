@@ -1,5 +1,5 @@
 <ngn-button-toggle
-  [value]="toggleValueList[1]"
+  [value]="btnToggleValue"
   #buttonToggle="ngnButtonToggle"
   (buttonToggleValueChange)="btnToggleValue = $event"
 >
@@ -33,6 +33,10 @@
       placeholder="input value"
       type="text"
     />
+
+    <ng-template ngnInputSuffix>
+      <div style="width: 20px; height: 20px; background-color: brown"></div>
+    </ng-template>
   </ngn-input-field>
 </div>
 

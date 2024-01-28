@@ -28,11 +28,12 @@
   --ngn-input-field-border: 2px;
 
   --ngn-input-field-b-radius: 4px;
-  --ngn-input-field-c-b-focus: #525353;
-  --ngn-input-field-c-error: #c56409;
-  --ngn-input-field-c-b: #797878;
 
-  --ngn-input-field-b-opacity: 1;
+  --ngn-input-field-c-b: #292929;
+  --ngn-input-field-c-b-error: #c56409;
+
+  --ngn-input-field-b-opacity: 0.6;
+
   --ngn-input-field-b: var(--ngn-input-field-border) solid
     var(--ngn-input-field-c-b);
 
@@ -41,7 +42,7 @@
   border-radius: var(--ngn-input-field-b-radius);
 
   &:focus-within {
-    --ngn-input-field-c-b: var(--ngn-input-field-c-b-focus);
+    --ngn-input-field-b-opacity: 1;
   }
 
   &:focus-within .field .__b .label {
@@ -53,11 +54,11 @@
   }
 
   &:not(:focus-within):hover {
-    --ngn-input-field-b-opacity: 0.7;
+    --ngn-input-field-b-opacity: 0.8;
   }
 
   &.error {
-    --ngn-input-field-c-b: var(--ngn-input-field-c-error);
+    --ngn-input-field-c-b: var(--ngn-input-field-c-b-error);
   }
 
   &.pending .field .__b .label {
@@ -180,6 +181,15 @@
 
 ._e {
   grid-area: 1/2 / 3/3;
+
+  display: flex;
+  align-items: center;
+
+  z-index: 2;
+}
+
+._s {
+  grid-area: 1/3 / 3/4;
 
   display: flex;
   align-items: center;

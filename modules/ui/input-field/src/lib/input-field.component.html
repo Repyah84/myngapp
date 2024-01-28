@@ -10,11 +10,16 @@
     </div>
     <div class="__c"></div>
   </div>
+
   <div class="_c"></div>
 
   <div class="_d"></div>
 
   <div class="_e">
     <ng-content></ng-content>
+  </div>
+
+  <div class="_s" *ngIf="inputSuffix as suffix">
+    <ng-container [ngTemplateOutlet]="suffix"> </ng-container>
   </div>
 </label>

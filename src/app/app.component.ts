@@ -12,8 +12,6 @@ export class AppComponent {
 
   title = 'myngapp';
 
-  public btnToggleValue: unknown;
-
   public readonly toggleValueList = [
     {
       id: 1,
@@ -28,6 +26,8 @@ export class AppComponent {
       value: 'trd',
     },
   ];
+
+  public btnToggleValue = this.toggleValueList[1];
 
   public readonly buttonToggleList = ['first', 'second', 'trd'];
 
